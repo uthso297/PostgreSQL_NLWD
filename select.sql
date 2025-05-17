@@ -93,6 +93,46 @@ SELECT * FROM students where country = 'USA' or country = 'Canada' or country = 
 -- alternative
 
 SELECT * FROM students where country IN('USA','Canada','UK');
+SELECT * FROM students where country NOT IN('USA','Canada','UK');
+
+
+SELECT * FROM students WHERE age BETWEEN 19 AND 22;
+
+SELECT * FROM students WHERE dob BETWEEN '2000-01-01' AND '2005-01-01';
+SELECT * FROM students WHERE dob BETWEEN '2000-01-01' AND '2005-01-01' ORDER BY dob;
+
+SELECT * FROM students WHERE first_name LIKE '%ly';
+SELECT * FROM students WHERE first_name LIKE 'J%';
+-- '_' underscore => single character
+SELECT * FROM students WHERE first_name LIKE '_a%';
+
+-- ILIKE => case insensitive
+SELECT * FROM students WHERE first_name ILIKE 'j%';
+
+SELECT * FROM students LIMIT 5;
+SELECT * FROM students LIMIT 5 OFFSET 2;
+
+-- pagination concept
+
+SELECT * FROM students LIMIT 5 OFFSET 5 * 0; -- for page 1
+SELECT * FROM students LIMIT 5 OFFSET 5 * 1; -- for page 2
+SELECT * FROM students LIMIT 5 OFFSET 5 * 2; -- for page 3
+
+DELETE FROM students; -- delete all rows
+
+DELETE FROM students where grade = 'B';
+
+SELECT * FROM students;
+
+UPDATE students SET email = 'default@mail.com',age = 30 WHERE student_id = 9;
+
+
+
+
+
+
+
+
 
 
 
